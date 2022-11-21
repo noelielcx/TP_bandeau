@@ -7,11 +7,11 @@ import java.awt.Font;
 
 public class ExempleDUtilisation {
 
-    public static void main(String[] args) {
+    /*  public static void main(String[] args) {
         new ExempleDUtilisation().exemple();
     }
 
-    public void exemple() {
+  public void exemple() {
         Bandeau monBandeau = new Bandeau();
         Font font = monBandeau.getFont();
         Color back = monBandeau.getBackground();
@@ -57,5 +57,18 @@ public class ExempleDUtilisation {
         monBandeau.setMessage("Terminé");
         monBandeau.sleep(3000);
         monBandeau.close();
+    } */
+
+    public static void main(String[] args){
+        Bandeau bandeau = new Bandeau();
+        Scenario scenario = new Scenario(bandeau);
+        bandeau.setBackground(Color.DARK_GRAY);
+        scenario.ajouterEffets(new Clignotant("Je clignote 5 fois", 5, bandeau));
+        scenario.ajouterEffets(new Rotate("Je tourne 2 fois", 2, bandeau));
+        scenario.ajouterEffets(new Zoom("Je zoome 3 fois", 3, bandeau));
+
+
+
+        scenario.afficherScenario();
     }
 }
